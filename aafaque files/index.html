@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .main-body {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="root"></div>
+    
+
+
+
+<!--Load React and ReactDom  -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<!-- Load Babel -->
+<!-- v6 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!-- Your custom script here -->
+<script type="text/babel">
+const getMessage = () => "Hello World";
+const rootElement = document.querySelector('.root');
+
+const name1 = "AAFAQUE";
+const date1 = new Date().getFullYear();
+
+const tech = ['html', 'css' , 'js'];
+
+const details = {
+    first: 'Aafaque',
+    last: 'Rasheed',
+    mob: 24679761,
+    dob: "12/03/1993"
+
+}
+
+const header = (
+    <header style={{border:"solid 2px black", background:"grey"}}>
+        <h1>{details.last}</h1>
+        <h2>{details.first}</h2>
+        <h3>{details.dob}</h3>
+    </header>    
+)
+
+const main = (
+    <div className="main-body">
+    <main>
+        <p>the quick browm fox jumped over the lazy little dog</p>
+        <p style={{fontSize:"2rem", color:"yellow"}}>the lazy little dog got jumped over by the quick brown fox</p>
+    </main>    </div>
+)
+
+const teams = ['chelsea','RMA', 'Manu'];
+const teamsArray = teams.map((item) => {<li>{item}</li>});
+
+const footer = ( 
+    <footer>
+        <ul>{tech}</ul>
+        <date>{date1}</date>
+        
+    </footer> )
+
+
+const body1 = (
+   <div>
+    {header}
+    {main}
+    {footer}
+    </div>
+)    
+
+
+ReactDOM.render(body1,rootElement);
+
+</script>
+</body>
+</html>
