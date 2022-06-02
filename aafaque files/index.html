@@ -55,12 +55,12 @@ const main = (
     </main>    </div>
 )
 
-const teams = ['chelsea','RMA', 'Manu'];
-const teamsArray = teams.map((item) => {<li>{item}</li>});
+const teams = ['chelsea','RMA', <strong>Manu</strong>];
+const teamsArray = teams.map((item, index) => <li key={index,}>{item}</li>);
 
 const footer = ( 
     <footer>
-        <ul>{tech}</ul>
+        <ul>{teamsArray}</ul>
         <date>{date1}</date>
         
     </footer> )
@@ -76,7 +76,7 @@ const body1 = (
 
 
 ReactDOM.render(body1,rootElement);
-
+console.log(teamsArray);
 </script>
 </body>
 </html>
